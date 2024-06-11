@@ -11,7 +11,8 @@ namespace DiyetleYasam_1.Entites.Concrete
     {
         public int Id { get; set; }
         public bool IsDeleted { get; set; }
-        public DateTime creatDate { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public double PortionSize { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }
         public int FoodId { get; set; }

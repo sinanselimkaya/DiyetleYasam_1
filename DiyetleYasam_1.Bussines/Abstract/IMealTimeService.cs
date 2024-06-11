@@ -13,6 +13,6 @@ namespace DiyetleYasam_1.Bussines.Abstract
         MealTime GetById(int id);
         void Add(MealTime mealTime);
         void Update(MealTime mealTime);
-        void Delete(MealTime mealTime
+        void Delete(MealTime mealTime);
     }
 }

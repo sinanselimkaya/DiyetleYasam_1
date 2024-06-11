@@ -60,6 +60,7 @@
             linklblKayıt.TabIndex = 1;
             linklblKayıt.TabStop = true;
             linklblKayıt.Text = "Kayıt ol";
+            linklblKayıt.LinkClicked += linklblKayıt_LinkClicked;
             // 
             // btnGirisYap
             // 
@@ -84,6 +85,7 @@
             Controls.Add(txtEMail);
             Name = "DiyetleYasam";
             Text = "Diyetle Yaşam";
+            Load += DiyetleYasam_Load;
             ResumeLayout(false);
             PerformLayout();
         }

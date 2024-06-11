@@ -17,7 +17,7 @@ namespace DiyetleYasam_1.DAL.Concrete.EnitityFramewok
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("YourConnectionStringHere");
+            optionsBuilder.UseSqlServer("server=DESKTOP-178FDDJ;database=Diyetdb;uid=sa;pwd=sa;trustservercertificate=true");
         }
     }
 }

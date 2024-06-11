@@ -28,140 +28,204 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaSayfa));
-            dateTimePicker1 = new DateTimePicker();
-            btnKahvaltı = new Button();
-            btnOgle = new Button();
-            btnAksam = new Button();
-            btnApartif = new Button();
-            DgvKahvaltı = new DataGridView();
-            DGVOgle = new DataGridView();
-            DGVAksam = new DataGridView();
-            DGVApartif = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)DgvKahvaltı).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)DGVOgle).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)DGVAksam).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)DGVApartif).BeginInit();
+            dtpTarih = new DateTimePicker();
+            dgvGunluk = new DataGridView();
+            cbOgun = new ComboBox();
+            txtMiktar = new TextBox();
+            btnEkle = new Button();
+            btnSil = new Button();
+            btnGüncele = new Button();
+            cbYemek = new ComboBox();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            btnProfil = new Button();
+            lbluruncesit = new Label();
+            lblcalori = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvGunluk).BeginInit();
             SuspendLayout();
             // 
-            // dateTimePicker1
+            // dtpTarih
             // 
-            dateTimePicker1.CalendarMonthBackground = SystemColors.InactiveCaption;
-            dateTimePicker1.Location = new Point(2, 108);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(208, 23);
-            dateTimePicker1.TabIndex = 0;
+            dtpTarih.CalendarMonthBackground = SystemColors.InactiveCaption;
+            dtpTarih.Location = new Point(12, 208);
+            dtpTarih.Name = "dtpTarih";
+            dtpTarih.Size = new Size(173, 23);
+            dtpTarih.TabIndex = 0;
             // 
-            // btnKahvaltı
+            // dgvGunluk
             // 
-            btnKahvaltı.BackColor = SystemColors.ControlLightLight;
-            btnKahvaltı.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            btnKahvaltı.Location = new Point(287, 101);
-            btnKahvaltı.Name = "btnKahvaltı";
-            btnKahvaltı.Size = new Size(213, 34);
-            btnKahvaltı.TabIndex = 1;
-            btnKahvaltı.Text = "Kahvaltı";
-            btnKahvaltı.UseVisualStyleBackColor = false;
+            dgvGunluk.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvGunluk.Location = new Point(9, 41);
+            dgvGunluk.Name = "dgvGunluk";
+            dgvGunluk.Size = new Size(562, 108);
+            dgvGunluk.TabIndex = 2;
+            dgvGunluk.CellClick += dgvGunluk_CellClick;
             // 
-            // btnOgle
+            // cbOgun
             // 
-            btnOgle.BackColor = SystemColors.ControlLightLight;
-            btnOgle.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            btnOgle.Location = new Point(287, 143);
-            btnOgle.Name = "btnOgle";
-            btnOgle.Size = new Size(213, 31);
-            btnOgle.TabIndex = 1;
-            btnOgle.Text = "Öğlen Yemeği";
-            btnOgle.UseVisualStyleBackColor = false;
+            cbOgun.FormattingEnabled = true;
+            cbOgun.Location = new Point(192, 208);
+            cbOgun.Name = "cbOgun";
+            cbOgun.Size = new Size(121, 23);
+            cbOgun.TabIndex = 3;
             // 
-            // btnAksam
+            // txtMiktar
             // 
-            btnAksam.BackColor = SystemColors.ControlLightLight;
-            btnAksam.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            btnAksam.Location = new Point(287, 182);
-            btnAksam.Name = "btnAksam";
-            btnAksam.Size = new Size(213, 33);
-            btnAksam.TabIndex = 1;
-            btnAksam.Text = "Aksam Yemeği";
-            btnAksam.UseVisualStyleBackColor = false;
+            txtMiktar.Location = new Point(455, 208);
+            txtMiktar.Name = "txtMiktar";
+            txtMiktar.Size = new Size(121, 23);
+            txtMiktar.TabIndex = 4;
             // 
-            // btnApartif
+            // btnEkle
             // 
-            btnApartif.BackColor = SystemColors.ControlLightLight;
-            btnApartif.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            btnApartif.Location = new Point(287, 221);
-            btnApartif.Name = "btnApartif";
-            btnApartif.Size = new Size(213, 30);
-            btnApartif.TabIndex = 1;
-            btnApartif.Text = "Aparatifler";
-            btnApartif.UseVisualStyleBackColor = false;
+            btnEkle.Location = new Point(12, 248);
+            btnEkle.Name = "btnEkle";
+            btnEkle.Size = new Size(173, 51);
+            btnEkle.TabIndex = 6;
+            btnEkle.Text = "Ekle";
+            btnEkle.UseVisualStyleBackColor = true;
+            btnEkle.Click += btnEkle_Click;
             // 
-            // DgvKahvaltı
+            // btnSil
             // 
-            DgvKahvaltı.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DgvKahvaltı.Location = new Point(12, 12);
-            DgvKahvaltı.Name = "DgvKahvaltı";
-            DgvKahvaltı.Size = new Size(115, 69);
-            DgvKahvaltı.TabIndex = 2;
+            btnSil.Location = new Point(390, 248);
+            btnSil.Name = "btnSil";
+            btnSil.Size = new Size(169, 51);
+            btnSil.TabIndex = 6;
+            btnSil.Text = "Sil";
+            btnSil.UseVisualStyleBackColor = true;
+            btnSil.Click += btnSil_Click;
             // 
-            // DGVOgle
+            // btnGüncele
             // 
-            DGVOgle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVOgle.Location = new Point(133, 12);
-            DGVOgle.Name = "DGVOgle";
-            DGVOgle.Size = new Size(115, 69);
-            DGVOgle.TabIndex = 2;
+            btnGüncele.Location = new Point(208, 248);
+            btnGüncele.Name = "btnGüncele";
+            btnGüncele.Size = new Size(162, 51);
+            btnGüncele.TabIndex = 6;
+            btnGüncele.Text = "Güncele";
+            btnGüncele.UseVisualStyleBackColor = true;
+            btnGüncele.Click += btnGüncele_Click;
             // 
-            // DGVAksam
+            // cbYemek
             // 
-            DGVAksam.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVAksam.Location = new Point(254, 12);
-            DGVAksam.Name = "DGVAksam";
-            DGVAksam.Size = new Size(115, 69);
-            DGVAksam.TabIndex = 2;
+            cbYemek.FormattingEnabled = true;
+            cbYemek.Location = new Point(318, 170);
+            cbYemek.Name = "cbYemek";
+            cbYemek.Size = new Size(121, 23);
+            cbYemek.TabIndex = 3;
             // 
-            // DGVApartif
+            // label1
             // 
-            DGVApartif.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVApartif.Location = new Point(375, 12);
-            DGVApartif.Name = "DGVApartif";
-            DGVApartif.Size = new Size(115, 69);
-            DGVApartif.TabIndex = 2;
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 190);
+            label1.Name = "label1";
+            label1.Size = new Size(32, 15);
+            label1.TabIndex = 7;
+            label1.Text = "Tarih";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(192, 190);
+            label2.Name = "label2";
+            label2.Size = new Size(37, 15);
+            label2.TabIndex = 7;
+            label2.Text = "Öğün";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(328, 152);
+            label3.Name = "label3";
+            label3.Size = new Size(42, 15);
+            label3.TabIndex = 7;
+            label3.Text = "Yemek";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(455, 190);
+            label4.Name = "label4";
+            label4.Size = new Size(41, 15);
+            label4.TabIndex = 7;
+            label4.Text = "Miktar";
+            // 
+            // btnProfil
+            // 
+            btnProfil.Location = new Point(12, 12);
+            btnProfil.Name = "btnProfil";
+            btnProfil.Size = new Size(75, 23);
+            btnProfil.TabIndex = 8;
+            btnProfil.Text = "Profilim";
+            btnProfil.UseVisualStyleBackColor = true;
+            btnProfil.Click += btnProfil_Click;
+            // 
+            // lbluruncesit
+            // 
+            lbluruncesit.AutoSize = true;
+            lbluruncesit.BackColor = SystemColors.AppWorkspace;
+            lbluruncesit.Location = new Point(320, 196);
+            lbluruncesit.Name = "lbluruncesit";
+            lbluruncesit.Size = new Size(13, 15);
+            lbluruncesit.TabIndex = 9;
+            lbluruncesit.Text = "a";
+            // 
+            // lblcalori
+            // 
+            lblcalori.AutoSize = true;
+            lblcalori.BackColor = SystemColors.AppWorkspace;
+            lblcalori.Location = new Point(320, 214);
+            lblcalori.Name = "lblcalori";
+            lblcalori.Size = new Size(13, 15);
+            lblcalori.TabIndex = 9;
+            lblcalori.Text = "a";
             // 
             // AnaSayfa
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(500, 253);
-            Controls.Add(DGVApartif);
-            Controls.Add(DGVAksam);
-            Controls.Add(DGVOgle);
-            Controls.Add(DgvKahvaltı);
-            Controls.Add(btnApartif);
-            Controls.Add(btnAksam);
-            Controls.Add(btnOgle);
-            Controls.Add(btnKahvaltı);
-            Controls.Add(dateTimePicker1);
+            ClientSize = new Size(583, 339);
+            Controls.Add(lblcalori);
+            Controls.Add(lbluruncesit);
+            Controls.Add(btnProfil);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(btnGüncele);
+            Controls.Add(btnSil);
+            Controls.Add(btnEkle);
+            Controls.Add(txtMiktar);
+            Controls.Add(cbYemek);
+            Controls.Add(cbOgun);
+            Controls.Add(dgvGunluk);
+            Controls.Add(dtpTarih);
             Name = "AnaSayfa";
             Text = "Ana Sayfa";
-            ((System.ComponentModel.ISupportInitialize)DgvKahvaltı).EndInit();
-            ((System.ComponentModel.ISupportInitialize)DGVOgle).EndInit();
-            ((System.ComponentModel.ISupportInitialize)DGVAksam).EndInit();
-            ((System.ComponentModel.ISupportInitialize)DGVApartif).EndInit();
+            Load += AnaSayfa_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvGunluk).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private DateTimePicker dateTimePicker1;
-        private Button btnKahvaltı;
-        private Button btnOgle;
-        private Button btnAksam;
-        private Button btnApartif;
-        private DataGridView DgvKahvaltı;
-        private DataGridView DGVOgle;
-        private DataGridView DGVAksam;
-        private DataGridView DGVApartif;
+        private DateTimePicker dtpTarih;
+        private DataGridView dgvGunluk;
+        private ComboBox cbOgun;
+        private TextBox txtMiktar;
+        private Button btnEkle;
+        private Button btnSil;
+        private Button btnGüncele;
+        private ComboBox cbYemek;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Button btnProfil;
+        private Label lbluruncesit;
+        private Label lblcalori;
     }
 }

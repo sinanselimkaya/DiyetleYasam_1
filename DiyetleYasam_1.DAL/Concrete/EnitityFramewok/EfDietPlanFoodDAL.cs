@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,6 +13,11 @@ namespace DiyetleYasam_1.DAL.Concrete.EnitityFramewok
     public class EfDietPlanFoodDAL : IDietPlanFoodDal
     {
         DiyetDbContext _Context = new DiyetDbContext();
+        public List<DietPlanFood> QueryAll(Expression<Func<DietPlanFood, bool>> constraint)
+        {
+            var userDietPlan = _Context.DietPlanFoods.Where(constraint).ToList();
+            return userDietPlan;
+        }
         public void Add(DietPlanFood dietPlanFood)
         {
             _Context.DietPlanFoods.Add(dietPlanFood);
@@ -43,6 +49,7 @@ namespace DiyetleYasam_1.DAL.Concrete.EnitityFramewok
                 result.IsDeleted=dietPlanFood.IsDeleted;
                 result.UserId= dietPlanFood.UserId;
                 result.MealTimeId= dietPlanFood.MealTimeId;
+                result.PortionSize=dietPlanFood.PortionSize;
                 _Context.SaveChanges();
             }
         }

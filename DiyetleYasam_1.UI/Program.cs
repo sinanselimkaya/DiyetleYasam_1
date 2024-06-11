@@ -1,3 +1,5 @@
+using DiyetleYasam_1.DAL.Concrete.EnitityFramewok;
+
 namespace DiyetleYasam_1.UI
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace DiyetleYasam_1.UI
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new DiyetleYasam());
+            Application.Run(new DiyetleYasam(new Entites.Concrete.User()));
         }
     }
 }

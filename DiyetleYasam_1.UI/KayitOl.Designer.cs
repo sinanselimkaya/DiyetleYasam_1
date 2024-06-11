@@ -35,9 +35,14 @@
             txtAd = new TextBox();
             txtSoyad = new TextBox();
             txtCinsiyet = new TextBox();
+            txtYas = new TextBox();
             txtKilo = new TextBox();
-            textBox8 = new TextBox();
             btnKayıtOl = new Button();
+            pictureBox1 = new PictureBox();
+            btnResimEkle = new Button();
+            btnBul = new Button();
+            llbGirisyap = new LinkLabel();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtEMali
@@ -88,21 +93,21 @@
             txtCinsiyet.Size = new Size(152, 23);
             txtCinsiyet.TabIndex = 0;
             // 
+            // txtYas
+            // 
+            txtYas.BackColor = SystemColors.ButtonFace;
+            txtYas.Location = new Point(374, 344);
+            txtYas.Name = "txtYas";
+            txtYas.Size = new Size(152, 23);
+            txtYas.TabIndex = 0;
+            // 
             // txtKilo
             // 
             txtKilo.BackColor = SystemColors.ButtonFace;
-            txtKilo.Location = new Point(374, 344);
+            txtKilo.Location = new Point(374, 401);
             txtKilo.Name = "txtKilo";
             txtKilo.Size = new Size(152, 23);
             txtKilo.TabIndex = 0;
-            // 
-            // textBox8
-            // 
-            textBox8.BackColor = SystemColors.ButtonFace;
-            textBox8.Location = new Point(374, 401);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(152, 23);
-            textBox8.TabIndex = 0;
             // 
             // btnKayıtOl
             // 
@@ -113,6 +118,46 @@
             btnKayıtOl.TabIndex = 1;
             btnKayıtOl.Text = "Kayıt Ol";
             btnKayıtOl.UseVisualStyleBackColor = true;
+            btnKayıtOl.Click += btnKayıtOl_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(40, 61);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 103);
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            // 
+            // btnResimEkle
+            // 
+            btnResimEkle.Location = new Point(8, 61);
+            btnResimEkle.Name = "btnResimEkle";
+            btnResimEkle.Size = new Size(26, 23);
+            btnResimEkle.TabIndex = 3;
+            btnResimEkle.Text = "+";
+            btnResimEkle.UseVisualStyleBackColor = true;
+            btnResimEkle.Click += btnResimEkle_Click;
+            // 
+            // btnBul
+            // 
+            btnBul.BackgroundImage = (Image)resources.GetObject("btnBul.BackgroundImage");
+            btnBul.BackgroundImageLayout = ImageLayout.Center;
+            btnBul.Location = new Point(8, 88);
+            btnBul.Name = "btnBul";
+            btnBul.Size = new Size(26, 25);
+            btnBul.TabIndex = 3;
+            btnBul.UseVisualStyleBackColor = true;
+            // 
+            // llbGirisyap
+            // 
+            llbGirisyap.AutoSize = true;
+            llbGirisyap.Location = new Point(60, 509);
+            llbGirisyap.Name = "llbGirisyap";
+            llbGirisyap.Size = new Size(52, 15);
+            llbGirisyap.TabIndex = 4;
+            llbGirisyap.TabStop = true;
+            llbGirisyap.Text = "Giriş Yap";
+            llbGirisyap.LinkClicked += llbGirisyap_LinkClicked;
             // 
             // KayitOl
             // 
@@ -120,9 +165,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(687, 533);
+            Controls.Add(llbGirisyap);
+            Controls.Add(btnBul);
+            Controls.Add(btnResimEkle);
+            Controls.Add(pictureBox1);
             Controls.Add(btnKayıtOl);
-            Controls.Add(textBox8);
             Controls.Add(txtKilo);
+            Controls.Add(txtYas);
             Controls.Add(txtCinsiyet);
             Controls.Add(txtSoyad);
             Controls.Add(txtAd);
@@ -131,6 +180,8 @@
             Controls.Add(txtEMali);
             Name = "KayitOl";
             Text = "Kayıt Ol";
+            Load += KayitOl_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -143,8 +194,12 @@
         private TextBox txtAd;
         private TextBox txtSoyad;
         private TextBox txtCinsiyet;
+        private TextBox txtYas;
         private TextBox txtKilo;
-        private TextBox textBox8;
         private Button btnKayıtOl;
+        private PictureBox pictureBox1;
+        private Button btnResimEkle;
+        private Button btnBul;
+        private LinkLabel llbGirisyap;
     }
 }

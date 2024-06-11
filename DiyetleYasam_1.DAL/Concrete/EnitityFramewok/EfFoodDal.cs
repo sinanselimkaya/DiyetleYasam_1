@@ -40,7 +40,7 @@ namespace DiyetleYasam_1.DAL.Concrete.EnitityFramewok
             if (result != null)
             {
                 result.Name = food.Name;
-                result.PortionSize=food.PortionSize;
+                
                 result.Unit=food.Unit;
                 result.Calories=food.Calories;
                 result.IsDeleted = food.IsDeleted;

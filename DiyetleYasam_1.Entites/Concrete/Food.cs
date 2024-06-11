@@ -11,10 +11,10 @@ namespace DiyetleYasam_1.Entites.Concrete
     {
         public int Id { get; set; }
         public string Name { get; set; }
-
-        public decimal PortionSize { get; set; }
+        
+       
         public string Unit { get; set; }
-        public decimal Calories { get; set; }
+        public double Calories { get; set; }
         public bool IsDeleted { get; set; }
 
         public IEnumerable<DietPlanFood> DietPlanFood { get; set; }
